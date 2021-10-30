@@ -1,0 +1,19 @@
+import cv2 as cv
+
+#img_200x300 = cv2.resize(img, (0, 0), fx=0.5, fy=0.5, interpolation=cv2.INTER_NEAREST)
+img = cv.imread(r"C:\Users\a\Pictures\Saved Pictures\1.png", 1)
+print(img.shape)
+img = cv.resize(img,  (0, 0), fx=0.5, fy=0.5, interpolation=cv.INTER_NEAREST)
+
+cv.imshow("image", img)
+print(img.shape)
+KeyNum = cv.waitKey(0)
+while KeyNum in [49, 50]:
+    if KeyNum == 49:
+        img = cv.resize(img,  (0, 0), fx=0.99, fy=0.99, interpolation=cv.INTER_AREA)
+        cv.imshow("image", img)
+        KeyNum = cv.waitKey(0)
+    else:
+        img = cv.resize(img,  (0, 0), fx=1.01, fy=1.01, interpolation=cv.INTER_LINEAR)
+        cv.imshow("image", img)
+        KeyNum = cv.waitKey(0)
