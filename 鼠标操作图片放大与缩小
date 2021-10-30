@@ -9,7 +9,7 @@ location_win = [0, 0]  # 鼠标左键点击时，暂存g_location_win
 g_location_click, g_location_release = [0, 0], [0, 0]  # 相对于窗口，鼠标左键点击和释放的位置
 
 g_zoom, g_step = 1, 0.1  # 图片缩放比例和缩放系数
-g_image_original = cv2.imread(r'C:\Users\a\Pictures\Saved Pictures\1.png')  # 原始图片，建议大于窗口宽高（800*600）
+g_image_original = cv2.imread(r'图片在本地的地址\图片名字.png或jpg')  # 原始图片，建议大于窗口宽高（800*600）
 g_image_zoom = g_image_original.copy()  # 缩放后的图片
 g_image_show = g_image_original[g_location_win[1]:g_location_win[1] + g_window_wh[1], g_location_win[0]:g_location_win[0] + g_window_wh[0]]  # 实际显示的图片
 
