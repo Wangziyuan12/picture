@@ -1,0 +1,32 @@
+import cv2.cv2 as cv
+
+cv.namedWindow("img", cv.WINDOW_NORMAL)
+cv.resizeWindow("img", (600, 600))
+cv.moveWindow("img", 400, 120)
+img = cv.imread("C:/Users/86159/Pictures/map.jpg", 1)
+img0 = cv.resize(img,  (0, 0), fx=1, fy=1, interpolation=cv.INTER_NEAREST)
+print(img0.shape)
+center = [img.shape[0] / 2, img.shape[1] / 2]
+print(center)
+cv.imshow("img", img0)
+KeyNum = cv.waitKey(0)
+times = 0
+
+while KeyNum in [49, 50]:
+    if KeyNum == 49:
+        times += 1
+
+        img = cv.resize(img0,  (0, 0), fx=0.99**times, fy=0.99**times, interpolation=cv.INTER_AREA)
+        center = [int(img.shape[0] / 2), int(img.shape[1] / 2)]
+        print(center)
+        img_show = img[center[0] - 816: center[0] + 816, center[1] - 990: center[1] + 990]
+        cv.imshow("img", img_show)
+        KeyNum = cv.waitKey(0)
+    else:
+        times -= 1
+        img = cv.resize(img0,  (0, 0), fx=0.99**times, fy=0.99**times, interpolation=cv.INTER_LINEAR)
+        center = [int(img.shape[0] / 2), int(img.shape[1] / 2)]
+        print(center)
+        img_show = img[center[0] - 816: center[0] + 816, center[1] - 990: center[1] + 990]
+        cv.imshow("img", img_show)
+        KeyNum = cv.waitKey(0)
