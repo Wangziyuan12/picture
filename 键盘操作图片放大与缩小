@@ -1,7 +1,7 @@
 import cv2 as cv
 
 #img_200x300 = cv2.resize(img, (0, 0), fx=0.5, fy=0.5, interpolation=cv2.INTER_NEAREST)
-img = cv.imread(r"C:\Users\a\Pictures\Saved Pictures\1.png", 1)
+img = cv.imread(r"图片在本地的地址\图片名称.png或jpg", 1)
 print(img.shape)
 img = cv.resize(img,  (0, 0), fx=0.5, fy=0.5, interpolation=cv.INTER_NEAREST)
 
